@@ -27,7 +27,7 @@ $out .= "X-LOTUS-CHARSET:UTF-8\r\n";
 
 
 // cache forecasts:
-$yr = Yr\Yr::create($location, "/tmp");
+$yr = Yr\Yr::create($location, "./tmp");
 $days = array();
 foreach($yr->getPeriodicForecasts(strtotime("now -3 days"), strtotime("now +100 days") - 1/*sec*/) as $forecast)
 {
