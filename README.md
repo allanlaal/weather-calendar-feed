@@ -24,6 +24,9 @@ This is the filename of the file offered for download when you access the calend
 
 
 ## Questions & Answers
+Q: Whats in the title of the calendar event?
+A: for example: 30|-22 12 11.2⇶, which is: Highest temperature|Lowest Temperature, Total rainfal in mm, max windspeed in m/s this day.
+
 Q: Why yr.no?
 A: Because it has the most accurate weather forecast system that I know of.
 
