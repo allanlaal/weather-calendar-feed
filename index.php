@@ -82,10 +82,34 @@ foreach ($days as $date => $day)
 	}
 	$out .= "\r\n";
 
-	// my phone can fit 17 chars, my GoogleCalendar 19 chars:
-	//	12345678901234567
+	// my phone can fit 20 chars, my GoogleCalendar 19 chars:
+	//	1234567890123456789
 	//	-22|-22 12☔ 11.2⇶ <- worst case scenario lengthwise
-	$out .= "SUMMARY:$temp_max|$temp_min {$precipitation}☔ {$wind_max}⇶\r\n";	
+	$precipitation_icon = '🌣';
+	if ($temp_min > 0)
+	{ // summer weather
+		if ($precipitation > 0)
+		{
+			$precipitation_icon = '☔';
+		}
+		else
+		{
+			$precipitation_icon = '☀';
+		}
+	}
+	else
+	{
+		if ($precipitation > 0)
+		{
+			$precipitation_icon = '❄';
+		}
+		else
+		{
+			$precipitation_icon = '⛄';
+		}
+	}
+			
+	$out .= "SUMMARY:$temp_max|$temp_min{$precipitation_icon}{$precipitation}㎜{$wind_max}⇶\r\n";	
 
 	
 	$out .= "TRANSP:OPAQUE\r\n";
