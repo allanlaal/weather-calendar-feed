@@ -36,15 +36,16 @@ foreach($yr->getPeriodicForecasts(strtotime("now -3 days"), strtotime("now +100 
 	
 foreach ($days as $date => $day)
 {
+	$now = gmdate('Ymd\THis\Z');
 	$out .= "BEGIN:VEVENT\r\n";
 	$out .= "DTSTART;VALUE=DATE:".date('Ymd', strtotime($date))."\r\n";
 	$out .= "DTEND;VALUE=DATE:".date('Ymd', strtotime($date.' +1 days'))."\r\n";
-	$out .= "DTSTAMP:".date('Ymd\THis\Z')."\r\n";
+	$out .= "DTSTAMP:$now\r\n";
 	$out .= "UID:Permanent-Weather-".date('Ymd', strtotime($date))."-$version\r\n";
 	$out .= "CLASS:PUBLIC\r\n";
 	$out .= "CREATED:$version\r\n";
 	$out .= "LOCATION:".str_replace('/', ', ', $location)."\r\n"; //@https://www.ietf.org/rfc/rfc2445.txt
-	$out .= "LAST-MODIFIED:$version\r\n";
+	$out .= "LAST-MODIFIED:$now\r\n";
 	$out .= "SEQUENCE:0\r\n";
 	$out .= "STATUS:CONFIRMED\r\n";
 	
