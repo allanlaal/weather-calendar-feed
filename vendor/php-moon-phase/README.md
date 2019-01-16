@@ -1,3 +1,8 @@
+- Copied from https://github.com/solarissmoke and added moon phase emoji.
+- Original version at https://github.com/solarissmoke/php-moon-phase
+
+---
+
 # A PHP class for calculating the phase of the Moon.
 
 MoonPhase is a PHP class for calculating the phase of the Moon, and other related variables. It is based on [Moontool for Windows](http://www.fourmilab.ch/moontoolw/).
