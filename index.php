@@ -139,6 +139,10 @@ foreach ($days as $date => $day)
 		$cond_count = 0;
 		$temp_total = 0;
 		
+		// suggested by allanlaal
+		// https://github.com/allanlaal/weather-calendar-feed/issues/4#issuecomment-610479274
+		$conditions_all = explode('#', substr($conditions_wholeday, 0, -1));
+		
 		foreach ($conditions_all as $cond)
 		{
 			$cond_total += score_weather_conditions($cond);
